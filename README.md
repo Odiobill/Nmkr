@@ -29,6 +29,7 @@ It's not a very elegant solution, but it's lightweight and works perfectly fine.
 public class NmkrExample : MonoBehaviour
 {
     public Nmkr nmkr; // Remember to drag the Nmkr object here...
+    public string projectId; // Insert your Nmkr project ID
 
     void GetCountsCallback()
     {
@@ -38,7 +39,7 @@ public class NmkrExample : MonoBehaviour
 
     IEnumerator GetCounts()
     {
-        nmkr.GetCounts(ExperimentsControllers.cardanoController.policies[0].projectId);
+        nmkr.GetCounts(projectId);
         while (nmkr.Busy)
         {
             yield return null;
@@ -54,7 +55,7 @@ public class NmkrExample : MonoBehaviour
         StartCoroutine(GetCounts());
 
         // or that...
-        nmkr.GetCounts(ExperimentsControllers.cardanoController.policies[0].projectId, GetCountsCallback);
+        nmkr.GetCounts(projectId, GetCountsCallback);
     }
 }
 ```
