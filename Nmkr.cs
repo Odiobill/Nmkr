@@ -1841,7 +1841,7 @@ public class Nmkr : MonoBehaviour
     public class MintNftsClass
     {
         public int countNfts;
-        public ReservedNftsClassV2[] reserveNfts;
+        public ReserveNftsClassV2[] reserveNfts;
     }
 
     [Serializable]
@@ -2198,7 +2198,7 @@ public class Nmkr : MonoBehaviour
     [Serializable]
     public class RoyaltyClass
     {
-        public int percentage;
+        public float percentage = 4.20f;
         public string address;
         public string pkh;
     }
@@ -2349,8 +2349,10 @@ public class Nmkr : MonoBehaviour
         public NftFileV2 previewImageNft;
         public NftSubfileFileV2[] subfiles;
         public MetadataPlaceholderClass[] metadataPlaceholder;
+        /*
         public string metadataOverride;
         public int priceInLovelace;
+        */
     }
 
     [Serializable]

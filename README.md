@@ -9,7 +9,15 @@ It is also available in the asset-store: https://assetstore.unity.com/packages/t
 
 ### Warning
 I implemented all the available API calls, but I tested only a few of them: the ones I need for the project I'm currently working on.
-There may be bugs and typos in the code, and there is a lot of room for improvements. PRs are welcome.
+
+Also, depending on your project and needs, you may want to update the schemas with your own defaults, or remove any unwanted parameter from some of them: in some cases, the *Nmkr Api* requires you to send less data than what the full schemas provide, otherwise calls will fail.
+As an example, and to force you taking a look :), I commented out the following fields from **UploadNftClassV2**:
+- metadataOverride
+- priceInLovelace
+
+and the *percentage* parameter of **RoyaltyClass** has a default of **4.20**.
+
+Please note that there may be bugs and typos in the code, and there is a lot of room for improvements. PRs are welcome.
 
 ### How to use it
 - Add an empty GameObject
